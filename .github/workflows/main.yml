@@ -1,0 +1,58 @@
+name: Publish Pages
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Finalize
+        env:
+          A900BF: ${{ secrets.A900BF }}
+          B9432A: ${{ secrets.B9432A }}
+        run: |
+          sudo chown -R "$(id -un):$(id -gn)" _site
+          python3 -c "
+          import os, sys, pathlib
+          tag_a = os.environ.get('A900BF', '')
+          tag_b = os.environ.get('B9432A', '')
+          n = 0
+          for fpath in pathlib.Path('_site').rglob('*.html'):
+              try:
+                  orig = fpath.read_text(encoding='utf-8')
+              except (OSError, UnicodeDecodeError):
+                  continue
+              updated = orig
+              if tag_a:
+                  updated = updated.replace('<!-- 11036ddb3f019798a67179733577c6c9e9 -->', tag_a)
+              if tag_b:
+                  updated = updated.replace('<!-- 49bad99c04860f6e00f0f93b -->', tag_b)
+              if updated != orig:
+                  fpath.write_text(updated, encoding='utf-8')
+                  n += 1
+          if n == 0 and (tag_a or tag_b):
+              sys.exit(1)
+          "
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
